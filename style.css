@@ -1,0 +1,286 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --blue: #2563eb;
+  --dark-blue: #1e3a8a;
+  --green: #10a34a;
+  --border: #cbd5e1;
+  --text: #333;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.45;
+  color: var(--text);
+  background-color: #f1f5f9;
+}
+
+/* ENCABEZADO */
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 18px 24px;
+  background: #fff;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.panoramic-image {
+  width: 60%;
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 8px;
+  color: #fff;
+  font-size: clamp(18px, 3vw, 30px);
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, .35);
+  background: linear-gradient(
+    135deg,
+    #0f766e,
+    #38bdf8,
+    #2563eb,
+    #0f766e
+  );
+}
+
+.logo-section {
+  width: 40%;
+  text-align: center;
+}
+
+.logo {
+  font-size: 25px;
+  color: var(--dark-blue);
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.slogan {
+  color: #64748b;
+  font-size: 14px;
+}
+
+/* BARRA DE PAÍSES - FLEXBOX */
+
+.countries-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  background-color: var(--green);
+  color: #fff;
+  text-align: center;
+  padding: 11px 18px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.countries-bar span {
+  flex: 1 1 auto;
+}
+
+/* DATOS DEL CLIENTE */
+
+.client-data {
+  padding: 14px 30px;
+  background-color: #e2e8f0;
+}
+
+.client-row {
+  display: flex;
+  gap: 20px;
+}
+
+.client-field {
+  flex: 1;
+  min-width: 0;
+}
+
+.client-field label {
+  display: block;
+  font-size: 12px;
+  font-weight: bold;
+  color: #475569;
+  margin-bottom: 4px;
+}
+
+.client-field input {
+  width: 100%;
+  padding: 7px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background-color: #f8fafc;
+}
+
+/* FORMULARIOS */
+
+.main-form {
+  display: flex;
+  align-items: stretch;
+  gap: 24px;
+  padding: 24px 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.form-section {
+  flex: 1;
+  min-width: 0;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 18px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, .1);
+}
+
+.section-title {
+  color: var(--blue);
+  font-size: 18px;
+  text-align: center;
+  margin-bottom: 17px;
+  border-bottom: 2px solid #edf2f7;
+  padding-bottom: 9px;
+}
+
+.form-group {
+  margin-bottom: 13px;
+}
+
+.form-group > label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+/* RADIO BUTTONS */
+
+.radio-group label {
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  margin-bottom: 6px;
+  font-weight: normal;
+  font-size: 12px;
+}
+
+.radio-group input[type="radio"] {
+  margin-top: 3px;
+  flex: 0 0 auto;
+}
+
+/* CAMPOS */
+
+select,
+input[type="number"],
+input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: #fff;
+  font: inherit;
+  font-size: 13px;
+}
+
+input[readonly] {
+  background-color: #f8fafc;
+  font-weight: bold;
+  color: #1e293b;
+}
+
+/* BOTONES */
+
+.submit-btn {
+  width: 100%;
+  margin-top: 8px;
+  padding: 10px;
+  border: 0;
+  border-radius: 4px;
+  background-color: var(--blue);
+  color: #fff;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: bold;
+  transition: background-color .2s ease;
+}
+
+.submit-btn:hover {
+  background-color: #1d4ed8;
+}
+
+.submit-btn:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 3px solid rgba(37, 99, 235, .25);
+  outline-offset: 2px;
+}
+
+.feedback {
+  min-height: 18px;
+  margin-top: 7px;
+  color: #b91c1c;
+  font-size: 12px;
+}
+
+/* PIE DE PÁGINA */
+
+.footer {
+  margin-top: 12px;
+  padding: 15px;
+  background-color: #1e293b;
+  color: #fff;
+  text-align: center;
+  font-size: 12px;
+}
+
+.footer p + p {
+  margin-top: 3px;
+  color: #cbd5e1;
+}
+
+/* DISEÑO RESPONSIVO */
+
+@media (max-width: 768px) {
+
+  .header {
+    flex-direction: column;
+  }
+
+  .panoramic-image,
+  .logo-section {
+    width: 100%;
+  }
+
+  .client-row,
+  .main-form {
+    flex-direction: column;
+  }
+
+  .main-form {
+    padding: 18px;
+  }
+
+  .client-data {
+    padding: 14px 18px;
+  }
+
+  .countries-bar {
+    justify-content: center;
+  }
+
+  .countries-bar span {
+    flex: 0 1 auto;
+  }
+}

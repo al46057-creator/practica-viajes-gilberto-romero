@@ -1,0 +1,206 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cotizador de viajes World Travel Agency">
+  <title>World Travel Agency - Cotizador Express</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="panoramic-image">
+      <span>DESCUBRE EL MUNDO</span>
+    </div>
+
+    <div class="logo-section">
+      <div class="logo">WORLD TRAVEL</div>
+      <div class="slogan">... tu pase al mundo de tus sueños</div>
+    </div>
+  </header>
+
+  <nav class="countries-bar">
+    <span>Estados Unidos</span>
+    <span>Francia</span>
+    <span>China</span>
+    <span>Italia</span>
+    <span>Japón</span>
+    <span>España</span>
+  </nav>
+
+  <section class="client-data">
+    <div class="client-row">
+      <div class="client-field">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" readonly value="Juan Pérez">
+      </div>
+
+      <div class="client-field">
+        <label for="direccion">Dirección:</label>
+        <input type="text" id="direccion" readonly value="Av. Universidad, Monterrey">
+      </div>
+
+      <div class="client-field">
+        <label for="telefono">Teléfono:</label>
+        <input type="tel" id="telefono" readonly value="8110002233">
+      </div>
+    </div>
+  </section>
+
+  <main class="main-form">
+
+    <!-- COTIZACIÓN INDIVIDUAL -->
+    <form id="individual" class="form-section" action="#" onsubmit="return false;">
+
+      <h2 class="section-title">Cotización Individual</h2>
+
+      <div class="form-group">
+        <label>Opciones de Vuelo:</label>
+
+        <div class="radio-group">
+          <label>
+            <input type="radio" name="vuelo" value="sin-avion" checked>
+            Sin Avión (999 MXN)
+          </label>
+
+          <label>
+            <input type="radio" name="vuelo" value="ida">
+            Avión de IDA (2,499 MXN)
+          </label>
+
+          <label>
+            <input type="radio" name="vuelo" value="ida-vuelta">
+            Avión de IDA y VUELTA (5,999 MXN)
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Opciones de Hospedaje:</label>
+
+        <div class="radio-group">
+          <label>
+            <input type="radio" name="hospedaje" value="sin-hotel" checked>
+            Sin Hotel (499 MXN)
+          </label>
+
+          <label>
+            <input type="radio" name="hospedaje" value="sencilla">
+            Habitación Sencilla (799 MXN)
+          </label>
+
+          <label>
+            <input type="radio" name="hospedaje" value="doble">
+            Habitación Doble (999 MXN)
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="adultos">
+          Número de Adultos (865 MXN por persona):
+        </label>
+
+        <select id="adultos" name="adultos">
+          <option value="1">1 Adulto</option>
+          <option value="2">2 Adultos</option>
+          <option value="3">3 Adultos</option>
+          <option value="4">4 Adultos</option>
+          <option value="5">5 Adultos</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="menores">
+          Número de Menores (437 MXN por niño):
+        </label>
+
+        <select id="menores" name="menores">
+          <option value="0">0 Menores</option>
+          <option value="1">1 Menor</option>
+          <option value="2">2 Menores</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="diasIndividual">
+          Número de Días (769 MXN por día):
+        </label>
+
+        <input type="number" id="diasIndividual"
+          name="diasIndividual" min="1" step="1" value="1">
+      </div>
+
+      <div class="form-group">
+        <label for="totalIndividual">Total a Pagar:</label>
+
+        <input type="text" id="totalIndividual"
+          name="totalIndividual" readonly value="$0.00 MXN">
+      </div>
+
+      <button type="button" class="submit-btn" id="btnIndividual">
+        Calcular Cotización
+      </button>
+
+      <p class="feedback" id="feedbackIndividual"></p>
+
+    </form>
+
+    <!-- PAQUETES FIJOS -->
+    <form id="paquetes" class="form-section" action="#" onsubmit="return false;">
+
+      <h2 class="section-title">Paquetes Fijos (4 personas)</h2>
+
+      <div class="form-group">
+        <label>Destinos Turísticos:</label>
+
+        <div class="radio-group">
+          <label>
+            <input type="radio" name="destino" value="europa" checked>
+            Europa de Ensueño (21,999 MXN)
+          </label>
+
+          <label>
+            <input type="radio" name="destino" value="asia">
+            Asia de Tradiciones (25,999 MXN)
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="diasPaquete">
+          Número de Días (899 MXN por día):
+        </label>
+
+        <input type="number" id="diasPaquete"
+          name="diasPaquete" min="1" step="1" value="1">
+      </div>
+
+      <div class="form-group">
+        <label for="totalPaquetes">Total a Pagar Paquete:</label>
+
+        <input type="text" id="totalPaquetes"
+          name="totalPaquetes" readonly value="$0.00 MXN">
+      </div>
+
+      <button type="button" class="submit-btn" id="btnPaquetes">
+        Calcular Paquete
+      </button>
+
+      <p class="feedback" id="feedbackPaquetes"></p>
+
+    </form>
+
+  </main>
+
+  <footer class="footer">
+    <p><strong>REPASO TERCER PARCIAL - ENTORNO DE PRÁCTICA</strong></p>
+    <p>World Travel Agency · Cotizador Express</p>
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
